@@ -17,6 +17,15 @@ app.add_middleware(
 UPLOAD_DIR = Path("uploads")
 UPLOAD_DIR.mkdir(exist_ok=True)
 
+@app.get("/")
+def root():
+    return {
+        "status": "ok",
+        "message": "AI Powerlifting ML Service is running",
+        "docs": "/docs",
+        "health": "/health"
+    }
+
 @app.get("/health")
 def health():
     return {
@@ -34,10 +43,9 @@ async def analyze(file: UploadFile = File(...)):
     with save_path.open("wb") as buffer:
         shutil.copyfileobj(file.file, buffer)
 
-    # Placeholder response for now
     return {
         "status": "ok",
-        "message": "Video received successfully",
+        "message": "Video received successfully. This is placeholder analysis.",
         "filename": unique_name,
         "analysis": {
             "exercise": "squat",
