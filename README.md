@@ -50,17 +50,17 @@ intended for video-based form analysis.
 <td align="center" width="33%">
 <img src="docs/images/1.jpg" alt="Deadlift form-analysis example" width="100%" />
 <br />
-<strong>Deadlift</strong>
+
 </td>
 <td align="center" width="33%">
 <img src="docs/images/2.jpg" alt="Squat form-analysis example" width="100%" />
 <br />
-<strong>Squat</strong>
+
 </td>
 <td align="center" width="33%">
 <img src="docs/images/3.jpg" alt="Bench press form-analysis example" width="100%" />
 <br />
-<strong>Bench Press</strong>
+
 </td>
   </tr>
 </table>
