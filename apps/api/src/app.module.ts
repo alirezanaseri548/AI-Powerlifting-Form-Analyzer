@@ -1,3 +1,4 @@
+﻿import { MlModule } from "./ml/ml.module";
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { AppController } from './app.controller';
@@ -11,7 +12,7 @@ import { AnalysisWorkerModule } from './analysis-worker/analysis-worker.module';
 import { HealthModule } from './health/health.module';
 
 @Module({
-  imports: [
+  imports: [MlModule, 
     ConfigModule.forRoot({
       isGlobal: true,
     }),

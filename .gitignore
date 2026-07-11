@@ -78,3 +78,71 @@ yarn-error.log*
 uploads/
 tmp/
 temp/
+
+# --------------------------------------------------
+# Local secrets and environment files
+**/.env
+**/.env.*
+!**/.env.example
+
+
+# Expo, Metro and EAS local state
+**/.expo/
+**/.expo-shared/
+.metro-cache/
+**/.metro-cache/
+.eas/
+**/.eas/
+credentials.json
+**/credentials.json
+
+# Generated native projects for managed Expo
+apps/mobile/android/
+apps/mobile/ios/
+
+# Build outputs
+**/build/
+**/dist/
+**/coverage/
+*.apk
+*.aab
+*.ipa
+
+# Logs and temporary files
+*.tmp
+*.temp
+*.bak
+*.backup-*
+pnpm-debug.log*
+
+# Local project snapshots and AI context files
+project-context.txt
+project-dump.txt
+*-context.txt
+*-dump.txt
+
+# Operating systems and editors
+desktop.ini
+*.swp
+*.swo
+
+# Local test media
+squat.mp4
+*.mp4
+
+# Local source backups
+backup-ui-*/
+**/backup-ui-*/
+
+# Publish logs
+publish-*.log
+
+# Local environment and dumps
+
+# Local media and logs
+
+# Local backups
+
+# Dependencies and caches
+.turbo/
+.cache/
