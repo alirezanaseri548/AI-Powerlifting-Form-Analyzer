@@ -18,8 +18,8 @@ Build a system that:
 - ML Service (pose / angle / form analysis)
 
 ## Current Status
-- Backend exists in pps/api
-- Mobile app bootstrap is being prepared in pps/mobile
+- Backend exists in apps/api
+- Mobile app bootstrap is being prepared in apps/mobile
 - ML service is planned and will be added next
 - Upload / analysis flow is not complete yet
 
@@ -39,33 +39,82 @@ This repository is currently a work in progress and may not run fully end-to-end
 
 <!-- APP_SHOWCASE_START -->
 
-## Mobile Application
+## Supported Powerlifting Movements
 
-The Expo/React Native mobile application allows users to select a
-powerlifting video, send it to the backend and receive form-analysis
-feedback.
+The prototype focuses on the three primary powerlifting movements:
+deadlift, squat, and bench press. These images represent the movements
+intended for video-based form analysis.
 
-### Application Screenshots
+<table>
+  <tr>
+<td align="center" width="33%">
+<img src="docs/images/1.jpg" alt="Deadlift form-analysis example" width="100%" />
+<br />
+<strong>Deadlift</strong>
+</td>
+<td align="center" width="33%">
+<img src="docs/images/2.jpg" alt="Squat form-analysis example" width="100%" />
+<br />
+<strong>Squat</strong>
+</td>
+<td align="center" width="33%">
+<img src="docs/images/3.jpg" alt="Bench press form-analysis example" width="100%" />
+<br />
+<strong>Bench Press</strong>
+</td>
+  </tr>
+</table>
+
+> These movement images are representative examples. The application
+> and analysis pipeline remain under active development.
+
+## System Architecture
+
+The proposed architecture prioritizes user privacy, efficient video
+processing, and clear separation between the mobile, backend, and
+machine-learning components.
+
+### Privacy-First System Architecture
 
 <p align="center">
-  <img src="docs/screenshots/1.jpg" alt="AI Powerlifting Form Analyzer - Application screen 1" width="31%" />
-  <img src="docs/screenshots/2.jpg" alt="AI Powerlifting Form Analyzer - Application screen 2" width="31%" />
-  <img src="docs/screenshots/3.jpg" alt="AI Powerlifting Form Analyzer - Application screen 3" width="31%" />
+  <img
+src="docs/images/privacy-first-system-architecture.png"
+alt="Privacy-first architecture for the AI Powerlifting Form Analyzer"
+width="90%"
+  />
 </p>
 
-> The screenshots show the current mobile interface. UI and analysis
-> capabilities may change while the project is under active development.
+The mobile application communicates with the API backend, which
+coordinates authentication, storage, caching, and ML-based movement
+analysis. The design aims to minimize unnecessary exposure of user
+videos and analysis data.
+
+### Local-First Mobile ML Pipeline
+
+<p align="center">
+  <img
+src="docs/images/local-first-mobile-ml-pipeline.png"
+alt="Local-first mobile machine-learning pipeline"
+width="90%"
+  />
+</p>
+
+The local-first pipeline prioritizes processing on the user's device
+when possible. Cloud services can provide synchronization and more
+computationally intensive analysis when required.
 
 ## Android APK Build
 
-The downloadable Android APK is generated with Expo Application
-Services (EAS) using the `preview` profile:
+The Android APK can be generated with Expo Application Services (EAS)
+using the `preview` build profile:
+
 ```powershell
 cd apps/mobile
 npx eas-cli@latest build --platform android --profile preview
+```
 
 The `preview` profile creates an APK suitable for direct installation.
 The `production` profile creates an Android App Bundle (`.aab`) for
-Google Play.
+Google Play distribution.
 
 <!-- APP_SHOWCASE_END -->
